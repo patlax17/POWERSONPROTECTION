@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import {
   Shield, Car, Users, Globe,
-  Instagram, Mail, MapPin,
+  Instagram, Mail, MapPin, Phone,
   Lock, Eye, ArrowRight, CheckCircle, ChevronDown, Menu, X, Star
 } from 'lucide-react'
 
@@ -567,10 +567,12 @@ function Contact() {
 
           <div className="space-y-8">
             {[
-              { icon: Mail, label: 'Email', value: 'info@powersonprotection.com', href: 'mailto:info@powersonprotection.com' },
-              { icon: MapPin, label: 'Coverage', value: 'NY · NJ · PA · CT · FL · Worldwide', href: null },
-            ].map(({ icon: Icon, label, value, href }) => (
-              <div key={label} className="flex items-start gap-5">
+              { icon: Mail,  label: 'Email',   value: 'powersonprotection@gmail.com', href: 'mailto:powersonprotection@gmail.com' },
+              { icon: Phone, label: 'Phone',   value: '(570) 240-2361',               href: 'tel:+15702402361' },
+              { icon: Phone, label: 'Phone',   value: '(347) 601-6979',               href: 'tel:+13476016979' },
+              { icon: MapPin,label: 'Coverage',value: 'NY · NJ · PA · CT · FL · Worldwide', href: null },
+            ].map(({ icon: Icon, label, value, href }, idx) => (
+              <div key={idx} className="flex items-start gap-5">
                 <div
                   className="w-10 h-10 flex items-center justify-center flex-shrink-0"
                   style={{ border: '1px solid #1e1e1e' }}
@@ -669,7 +671,7 @@ function Contact() {
 
               {status === 'error' && (
                 <p style={{ color: '#b8976a', fontSize: '0.75rem' }}>
-                  Something went wrong. Please email us directly.
+                  Something went wrong. Please email us at powersonprotection@gmail.com or call (570) 240-2361.
                 </p>
               )}
 
