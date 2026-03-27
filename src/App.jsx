@@ -325,15 +325,16 @@ function Services() {
                   <p className="text-sm leading-relaxed" style={{ color: 'rgba(245,243,239,0.4)', fontWeight: 300 }}>
                     {svc.description}
                   </p>
-                  <div
+                  <a
+                    href="#contact"
                     className="mt-8 flex items-center gap-2 text-[0.6rem] uppercase tracking-[0.18em] transition-all duration-300"
-                    style={{ color: 'rgba(184,151,106,0)' }}
+                    style={{ color: 'rgba(184,151,106,0.5)', textDecoration: 'none' }}
                     onMouseEnter={(e) => e.currentTarget.style.color = '#b8976a'}
-                    onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(184,151,106,0)'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(184,151,106,0.5)'}
                   >
                     <span>Enquire</span>
                     <ArrowRight size={10} />
-                  </div>
+                  </a>
                 </div>
               </div>
             )
