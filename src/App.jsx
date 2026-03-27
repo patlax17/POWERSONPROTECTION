@@ -497,7 +497,7 @@ function InstagramCTA() {
 function Contact() {
   const { ref, visible } = useFadeIn()
   const [status, setStatus] = useState('idle')
-  const [form, setForm] = useState({ name: '', email: '', service: '', message: '' })
+  const [form, setForm] = useState({ name: '', email: '', phone: '', service: '', message: '' })
 
   const handleChange = (e) =>
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
@@ -513,7 +513,7 @@ function Contact() {
       })
       if (res.ok) {
         setStatus('sent')
-        setForm({ name: '', email: '', service: '', message: '' })
+        setForm({ name: '', email: '', phone: '', service: '', message: '' })
       } else setStatus('error')
     } catch {
       setStatus('error')
@@ -633,6 +633,19 @@ function Contact() {
                   id="email" name="email" type="email" required
                   value={form.email} onChange={handleChange}
                   placeholder="you@company.com"
+                  style={{ ...inputStyle }}
+                  onFocus={(e) => e.target.style.borderColor = 'rgba(184,151,106,0.5)'}
+                  onBlur={(e) => e.target.style.borderColor = '#1e1e1e'}
+                />
+              </div>
+              <div>
+                <label htmlFor="phone" style={labelStyle}>
+                  Cell Phone Number <span style={{ color: '#b8976a' }}>*</span>
+                </label>
+                <input
+                  id="phone" name="phone" type="tel" required
+                  value={form.phone} onChange={handleChange}
+                  placeholder="(555) 000-0000"
                   style={{ ...inputStyle }}
                   onFocus={(e) => e.target.style.borderColor = 'rgba(184,151,106,0.5)'}
                   onBlur={(e) => e.target.style.borderColor = '#1e1e1e'}
