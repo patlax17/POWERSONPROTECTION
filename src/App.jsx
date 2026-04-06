@@ -91,36 +91,20 @@ function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
           ? 'glass border-b border-white/5 shadow-[0_4px_40px_rgba(0,0,0,0.6)]'
           : 'bg-transparent'
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-8 lg:px-16 h-20 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-3 group" aria-label="Powerson Protection">
-          {/* Gold shield mark */}
-          <div
-            className="w-8 h-8 flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:scale-105"
-            style={{ border: '1px solid rgba(184,151,106,0.6)' }}
-          >
-            <Shield size={14} style={{ color: '#b8976a' }} />
-          </div>
-          <div className="flex flex-col leading-none">
-            <span
-              className="font-display font-black uppercase text-[10px] tracking-[0.28em]"
-              style={{ color: '#f5f3ef' }}
-            >
-              POWERSON
-            </span>
-            <span
-              className="font-display font-light uppercase text-[10px] tracking-[0.28em]"
-              style={{ color: '#b8976a' }}
-            >
-              PROTECTION
-            </span>
-          </div>
+        <a href="#" className="flex items-center group" aria-label="Powerson Protection">
+          <img
+            src="/logo.png"
+            alt="Powerson Protection"
+            className="h-16 w-auto object-contain transition-all duration-300 group-hover:scale-105"
+            style={{ filter: 'drop-shadow(0 2px 8px rgba(184,151,106,0.25))' }}
+          />
         </a>
 
         {/* Desktop Nav */}
@@ -149,9 +133,8 @@ function Navbar() {
 
       {/* Mobile Drawer */}
       <div
-        className={`md:hidden glass border-t transition-all duration-300 overflow-hidden ${
-          open ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'
-        }`}
+        className={`md:hidden glass border-t transition-all duration-300 overflow-hidden ${open ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'
+          }`}
         style={{ borderColor: '#1e1e1e' }}
       >
         <nav className="flex flex-col px-8 py-8 gap-7">
@@ -368,9 +351,8 @@ function About() {
 
       <div
         ref={ref}
-        className={`max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center transition-all duration-800 ${
-          visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}
+        className={`max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center transition-all duration-800 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
       >
         {/* Left */}
         <div>
@@ -459,9 +441,8 @@ function InstagramCTA() {
     >
       <div
         ref={ref}
-        className={`max-w-2xl mx-auto text-center relative z-10 transition-all duration-700 ${
-          visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-        }`}
+        className={`max-w-2xl mx-auto text-center relative z-10 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+          }`}
       >
         {/* Icon */}
         <div
@@ -568,10 +549,10 @@ function Contact() {
 
           <div className="space-y-8">
             {[
-              { icon: Mail,  label: 'Email',   value: 'powersonprotection@gmail.com', href: 'mailto:powersonprotection@gmail.com' },
-              { icon: Phone, label: 'Phone',   value: '(570) 240-2361',               href: 'tel:+15702402361' },
-              { icon: Phone, label: 'Phone',   value: '(347) 601-6979',               href: 'tel:+13476016979' },
-              { icon: MapPin,label: 'Coverage',value: 'NY · NJ · PA · CT · FL · Worldwide', href: null },
+              { icon: Mail, label: 'Email', value: 'powersonprotection@gmail.com', href: 'mailto:powersonprotection@gmail.com' },
+              { icon: Phone, label: 'Phone', value: '(570) 240-2361', href: 'tel:+15702402361' },
+              { icon: Phone, label: 'Phone', value: '(347) 601-6979', href: 'tel:+13476016979' },
+              { icon: MapPin, label: 'Coverage', value: 'NY · NJ · PA · CT · FL · Worldwide', href: null },
             ].map(({ icon: Icon, label, value, href }, idx) => (
               <div key={idx} className="flex items-start gap-5">
                 <div
@@ -719,15 +700,14 @@ function Footer() {
     >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         {/* Logo */}
-        <div className="flex items-center gap-3">
-          <div className="w-7 h-7 flex items-center justify-center" style={{ border: '1px solid rgba(184,151,106,0.4)' }}>
-            <Shield size={12} style={{ color: '#b8976a' }} />
-          </div>
-          <div className="flex flex-col leading-none">
-            <span className="font-display font-black uppercase text-[9px] tracking-[0.28em]" style={{ color: '#f5f3ef' }}>POWERSON</span>
-            <span className="font-display font-light uppercase text-[9px] tracking-[0.28em]" style={{ color: '#b8976a' }}>PROTECTION</span>
-          </div>
-        </div>
+        <a href="#" aria-label="Powerson Protection">
+          <img
+            src="/logo.png"
+            alt="Powerson Protection"
+            className="h-14 w-auto object-contain"
+            style={{ filter: 'drop-shadow(0 1px 4px rgba(184,151,106,0.2))' }}
+          />
+        </a>
 
         {/* Nav */}
         <nav className="flex gap-8">
